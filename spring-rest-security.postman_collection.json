@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "f63ac997-92ce-41ee-86e3-2d3e412cac89",
+		"name": "spring jwt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. get issuer public api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/public",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"public"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. post user and password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/authenticate?username=avergnaud&password=myPassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"authenticate"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "avergnaud"
+						},
+						{
+							"key": "password",
+							"value": "myPassword"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. get issuer private api",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJwb2MuY29tLnRva2VuLWlzc3VlciIsImF1ZCI6InBvYy5jb20iLCJzdWIiOiJhdmVyZ25hdWQiLCJleHAiOjE1NzQ4NzQ0MTQsInJvbCI6WyJST0xFX1VTRVIiXX0.0y2cAIXVl7rj9KVDg-jQHNGqtKiwGXnqLMJPE7XBAlog1iwJRkj9r_WNImGtwTRIbWn1FLsdPICm7BQTKCJg0w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/private",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"private"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. get some-api private api",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJwb2MuY29tLnRva2VuLWlzc3VlciIsImF1ZCI6InBvYy5jb20iLCJzdWIiOiJhdmVyZ25hdWQiLCJleHAiOjE1NzQ4NzQ0MTQsInJvbCI6WyJST0xFX1VTRVIiXX0.0y2cAIXVl7rj9KVDg-jQHNGqtKiwGXnqLMJPE7XBAlog1iwJRkj9r_WNImGtwTRIbWn1FLsdPICm7BQTKCJg0w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/greeting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"greeting"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
