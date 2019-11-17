@@ -1,3 +1,6 @@
+# Sécurisation d'API REST avec spring-security
+
+Le token-issuer (JWT) et les différents services REST partagent un SECRET. Le token-issuer signe les JWT et les services REST valident les token.
 
 ## build
 
